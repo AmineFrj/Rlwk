@@ -1,17 +1,22 @@
 # Regularized Lasso-Weighted k-means (RLwk)
 
-**RLWK** is an experimental implementation of a K-Means clustering variant, designed to evaluate different initialization strategies and their impact on metrics such as NMI, ARI, and Silhouette Score. This project is intended for research and comparative analysis.
+**RLWK** is a simple and efficient Python implementation of a feature-weighted K-Means clustering algorithm tailored for text data. It is particularly useful for exploring and interpreting large textual corpora. RLWK introduces a feature weighting mechanism that helps identify the most informative words within each cluster.
+
+This project is lightweight, easy to run, and designed to be used as a base for testing initialization strategies, parameter tuning, or cluster analysis. It also includes tools to assist in visualizing clustering results and supports using Large Language Models (LLMs) like ChatGPT as a post-processing step to summarize and interpret clusters.
 
 ## Project Structure
 
 ```
 RLWK/
-├── notebooks/           # Jupyter notebooks for experimentation
-├── src/                 # Main source code
-├── requirements.txt     # Python dependencies
-├── Dockerfile           # Docker image for Jupyter environment
-├── docker-compose.yml   # Docker Compose configuration
-└── README.md            # This file
+├── coclust/               # Implementation of spherical k-means
+├── new_data/              # Benchmark datasets
+├── RLWK/                  # Main source code
+    ├── rlwk.py            # Core functionnalities of Rlwk
+    └── top_terms_utils.py # Visualization of top terms utilities
+├── requirements.txt       # Python dependencies
+├── Dockerfile             # Docker image
+├── docker-compose.yml     # Docker Compose configuration
+└── README.md              # This file
 ```
 
 ## Quick Start with Docker
@@ -51,13 +56,13 @@ This will start a Jupyter Lab server accessible at [http://localhost:8888](http:
 
 - Implementation of K-Means with various initialization strategies: `random`, `s-kmeans`, `k-means++`
 - Performance evaluation using NMI, ARI, and Silhouette Score
-- Result visualization and parameter tunning
+- Result visualization and parameter tuning
 
 ## RLWK Usage Example
 
 We propose two jupyter notebooks to demonstrate how to use the RLwk algorithm. The
-[Simple usage of RLwk](<Simple usage of RLwk.ipynb>) notebook contains simple usage example on benchmark datasets: fit the model, evaluate clustering results, extract top terms, etc. And the
-[Visualization](<Visualization of Rlwk results.ipynb>) notebook contains evaluation experiments.
+[Simple usage of RLwk](notebooks/Simple%20usage%20of%20RLwk.ipynb) notebook contains simple usage example on benchmark datasets: fit the model, evaluate clustering results, extract top terms, etc. And the
+[Visualization of Rlwk results](notebooks/Visualization%20of%20Rlwk%20results.ipynb) notebook contains evaluation experiments.
 
 Here is a basic example of using RLWK with the BBC News dataset, along with an explanation of how to use the core class:
 
@@ -75,7 +80,7 @@ model.fit(mat_tfidf)
 
 # Access results
 labels = model.labels_            # Cluster labels for each point
-labels = model.weights_           # Feature weights
+weights = model.weights_           # Feature weights
 centers = model.cluster_centers_  # Coordinates of cluster centers
 inertia = model.P2                # Sum of squared errors
 ```
