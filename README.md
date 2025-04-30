@@ -94,16 +94,10 @@ inertia = model.P2                # Sum of squared errors
 
 You can switch initialization methods with `init="r"` for random, `"s"` fror spherical k-means, or `"k"` for k-means++.python
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! If you have suggestions or bug fixes, feel free to open an issue or a pull request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-```
-
-```
