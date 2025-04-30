@@ -6,3 +6,5 @@ services:
       context: .
     ports:
       - "8888:8888"
+    volumes:
+      - ./new_data:/app/new_data
