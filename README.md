@@ -100,4 +100,7 @@ Contributions are welcome! If you have suggestions or bug fixes, feel free to op
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+You are free to use, share, and adapt the work **for non-commercial purposes**, provided that appropriate credit is given.
+
+See the full license text at [creativecommons.org/licenses/by-nc/4.0](https://creativecommons.org/licenses/by-nc/4.0/).
