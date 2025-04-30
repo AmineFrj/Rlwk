@@ -1,0 +1,8 @@
+name: CIKM-RLWK
+services:
+  app:
+    container_name: afer-RLWK
+    build:
+      context: .
+    ports:
+      - "8888:8888"
